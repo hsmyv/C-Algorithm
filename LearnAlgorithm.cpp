@@ -1188,19 +1188,67 @@ int main()
 }*/
 
 //55. Write a C++ program to check two integers and return the value nearest to 13 without crossing over.Return 0 if both numbers go over.
-
+/*
 int test(int x, int y)
 {
-    if (x > 13 && y > 13) return 0;
-    if (x <= 13 && y > 13) return x;
-    if (y <= 13 && x > 13) return y;
+     if (x > 13 && y > 13) return 0;
+     if (x <= 13 && y > 13) return x;
+     if (y <= 13 && x > 13) return y;
     return x > y ? x : y;
 }
 
 int main()
 {
     cout << test(4, 5) << endl;
-    cout << test(7, 12) << endl;
+    cout << test(7, 15) << endl;
     cout << test(10, 9) << endl;
     cout << test(17, 33) << endl;
+}*/
+
+//56. Write a C++ program to check three given integers(small, medium and large) 
+//and return true if the difference between small and medium and the difference between medium and large is same.
+/*
+bool test(int x, int y, int z)
+{
+    if(x > y && x > z && y > z) return x - y == y - z;
+    if(x > y && x > z && z > y) return x - y == z - y;
+    if(y > x && y > z && x > z) return y - x == x - z;
+    if(y > x && y > z && z > x) return y - z == z - x;
+    if(z > x && z > y && x > y) return z - x == x - y;
+
+    return  y - x == z - y;
+}
+
+int main()
+{
+    cout << test(4, 5, 6) << endl;
+    cout << test(7, 12, 13) << endl;
+    cout << test(-1, 0, 1) << endl;
+}*/
+
+//57. Write a C++ program to create another string using two given strings s1, s2, the format of the new string will be s1s2s2s1.
+/*
+string test(string x, string y)
+{
+    string result = x + y + y + x;
+    return result;
+}
+
+int main()
+{
+    cout << test("Hi", "Hello") << endl;
+    cout << test("whats", "app") << endl;
+}
+*/
+
+// 58. Write a C++ program to insert a given string into middle of the another given string of length 4.
+
+string test(string str)
+{
+
+}
+
+int main()
+{
+    
 }
