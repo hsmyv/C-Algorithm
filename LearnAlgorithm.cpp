@@ -1242,13 +1242,3 @@ int main()
 */
 
 // 58. Write a C++ program to insert a given string into middle of the another given string of length 4.
-
-string test(string str)
-{
-
-}
-
-int main()
-{
-    
-}
