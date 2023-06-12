@@ -1188,18 +1188,28 @@ int main()
 }*/
 
 //55. Write a C++ program to check two integers and return the value nearest to 13 without crossing over.Return 0 if both numbers go over.
+<<<<<<< HEAD
 /*
 int test(int x, int y)
 {
      if (x > 13 && y > 13) return 0;
      if (x <= 13 && y > 13) return x;
      if (y <= 13 && x > 13) return y;
+=======
+
+int test(int x, int y)
+{
+    if (x > 13 && y > 13) return 0;
+    if (x <= 13 && y > 13) return x;
+    if (y <= 13 && x > 13) return y;
+>>>>>>> f2b75f65b2f2eda6925ecc744f2abee3ca3a1d38
     return x > y ? x : y;
 }
 
 int main()
 {
     cout << test(4, 5) << endl;
+<<<<<<< HEAD
     cout << test(7, 15) << endl;
     cout << test(10, 9) << endl;
     cout << test(17, 33) << endl;
@@ -1241,4 +1251,4 @@ int main()
 }
 */
 
-// 58. Write a C++ program to insert a given string into middle of the another given string of length 4.
+// 58. Write a C++ program to insert a given string into middle of the another given string of length 4
