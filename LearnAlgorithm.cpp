@@ -1188,7 +1188,6 @@ int main()
 }*/
 
 //55. Write a C++ program to check two integers and return the value nearest to 13 without crossing over.Return 0 if both numbers go over.
-<<<<<<< HEAD
 /*
 int test(int x, int y)
 {
@@ -1202,7 +1201,6 @@ int test(int x, int y)
     if (x > 13 && y > 13) return 0;
     if (x <= 13 && y > 13) return x;
     if (y <= 13 && x > 13) return y;
->>>>>>> f2b75f65b2f2eda6925ecc744f2abee3ca3a1d38
     return x > y ? x : y;
 }
 
@@ -1252,3 +1250,45 @@ int main()
 */
 
 // 58. Write a C++ program to insert a given string into middle of the another given string of length 4
+/*
+string test(string x, string y)
+{
+    string beforeCh = x.substr(0,2);
+    string lastCh = x.substr(2,4);
+
+    return beforeCh + y + lastCh;
+}
+
+int main()
+{
+    cout << test("(())", "Hello") << endl;
+}*/
+
+// 59. Write a C++ program to create another string using three copies of the last two characters of a given string of length at least two.
+/*
+string test(string x)
+{
+   string last2ch =  x.substr(x.length() - 2);
+   return last2ch + last2ch + last2ch;
+}
+
+int main()
+{
+   cout << test("Hello") << endl;
+   cout << test("Hi") << endl;
+}*/
+
+// 60. Write a C++ program to create a new string using the first two characters of a given string.
+// If the string length is less than 2, return the original string.
+/*
+string test(string x){
+    return x.length() > 2 ? x.substr(0, 2) : x;
+}
+
+int main()
+{
+    cout << test("Hello") << endl;
+    cout << test("Hi") << endl;
+    cout << test("H") << endl;
+    cout << test(" ") << endl;
+}*/
