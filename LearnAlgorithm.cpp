@@ -1815,3 +1815,460 @@ int main()
     int nums1[] = {10, 20, -30, -40, 50};
     cout << test(nums1) << endl;
 }*/
+
+// 85. Write a C++ program to rotate the elements of a given array of integers (length 4 ) in the left direction and return the changed array.
+/*
+int *test(int nums[])
+{
+    static int r_array[] = { nums[1], nums[2], nums[3], nums[0]};
+    return r_array;
+}
+
+int main()
+{
+    int *p;
+    int nums[] = {10, 20, 30, 40};
+
+    int arr_length = sizeof(nums) / sizeof(nums[0]);
+
+    cout << "Original array: " << endl;
+    for (int i = 0; i < arr_length; i++)
+    {
+        cout << nums[i] << " ";
+    }
+
+    p = test(nums);
+
+    cout << "\nRotated array: " << endl;
+    for (int i = 0; i < arr_length; i++)
+    {
+        cout << *(p + i) << " ";
+    }
+}*/
+
+//86. Write a C++ program to reverse a given array of integers of length 5.
+/*
+int *test(int nums[])
+{
+    static int r_array[] = {nums[4], nums[3], nums[2], nums[1],nums[0]};
+    return r_array;
+}
+
+int main()
+{
+    int *p;
+    int nums[] = {10, 20, 30, 40, 50};
+
+    int arr_length = sizeof(nums) / sizeof(nums[0]);
+
+    cout << "Original array: " << endl;
+    for (int i = 0; i < arr_length; i++)
+    {
+        cout << nums[i] << " ";
+    }
+
+    p = test(nums);
+
+    cout << "\nRotated array: " << endl;
+    for (int i = 0; i < arr_length; i++)
+    {
+        cout << *(p + i) << " ";
+    }
+}
+*/
+
+// 87. Write a C++ program to create an array containing the middle elements from the two given arrays of integers, each of length 5.
+/*
+int *test(int nums1[], int nums2[])
+{
+
+    static int max_array[] = {nums1[2], nums2[2]};
+    return max_array;
+}
+
+int main()
+{
+    // a pointer to an int.
+    int *p;
+    int nums1[] = {0, 10, 20, 30, 40};
+    int nums2[] = {0, -10, -20, -30, -40};
+
+    p = test(nums1, nums2);
+
+    cout << "\nNew array: " << endl;
+    for (int i = 0; i < 2; i++)
+    {
+        cout << *(p + i) << " ";
+    }
+}
+*/
+
+// 88. Write a C++ program to create an array taking the first and last elements of a given array of integers and length 1 or more.
+
+/*
+int *test(int nums[], int arr_length)
+{
+    static int r_array[] = {nums[0], nums[arr_length - 1]};
+    return r_array;
+}
+
+int main()
+{
+    int *p;
+    int nums[] = {10, 20, -30, -40, 30};
+
+    int arr_length = sizeof(nums) / sizeof(nums[0]);
+    cout << "Original array: " << endl;
+    for (int i = 0; i < arr_length; i++)
+    {
+        cout << nums[i] << " ";
+    }
+
+    p = test(nums, arr_length);
+    arr_length = sizeof(p) / sizeof(p[0]);
+    cout << "\nNew array: " << endl;
+    for (int i = 0; i < arr_length; i++)
+    {
+        cout << *(p + i) << " ";
+    }
+}*/
+
+// 89. Write a C++ program to determine whether a given array of integers of length 2 contains 15 or 20.
+/*
+bool test(int nums[])
+{
+    return nums[0] == 15 || nums[1] == 15 || nums[0] == 20 || nums[1] == 20;
+}
+
+int main()
+{
+    int nums1[] = {12, 20};
+    int nums2[] = {14, 15};
+    int nums3[] = {11, 21};
+    cout << test(nums1) << endl;
+    cout << test(nums2) << endl;
+    cout << test(nums3) << endl;
+}*/
+
+// 90. Write a C++ program to check if an array of integers with length 2 does not contain 15 or 20.
+/*
+bool test(int nums[])
+{
+    return nums[0] != 15 && nums[1] != 15 && nums[0] != 20 && nums[1] != 20;
+}
+
+int main()
+{
+    int nums1[] = {12, 20};
+    int nums2[] = {14, 15};
+    int nums3[] = {11, 21};
+    cout << test(nums1) << endl;
+    cout << test(nums2) << endl;
+    cout << test(nums3) << endl;
+    return 0;
+}
+
+*/
+
+// 91. Write a C++ program to check a given array of integers and return true if the array contains 10 or 20 twice. The length of the array will be 0, 1, or 2.
+
+/*
+bool test(int nums[], int arr_length)
+{
+    return arr_length == 2 && ((nums[0] == 10 && nums[1] == 10) || (nums[0] == 20 && nums[1] == 20));
+}
+
+int main()
+{
+    int nums1[] = {12, 20};
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    cout << test(nums1, arr_length) << endl;
+    int nums2[] = {20, 20};
+    arr_length = sizeof(nums2) / sizeof(nums2[0]);
+    cout << test(nums2, arr_length) << endl;
+    int nums3[] = {10, 10};
+    cout << test(nums3, arr_length) << endl;
+    int nums4[] = {10};
+    arr_length = sizeof(nums4) / sizeof(nums4[0]);
+    cout << test(nums4, arr_length) << endl;
+}*/
+
+// 92. Write a C++ program to check a given array of integers, length 3 and create an array.
+// If there is a 5 in the given array immediately followed by a 7 then set 7 to 1.
+/*
+int *test(int nums[], int arra_length)
+{
+    for (int i = 0; i < arra_length - 1; i++)
+    {
+        if(nums[i] == 5 && nums[i + 1] == 7)
+        {
+            nums[i + 1] = 1;
+        }
+    }
+    return nums;
+}
+
+int main()
+{
+    int *p;
+    int nums1[] = {1, 5, 7};
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+
+    p = test(nums1, arr_length);
+
+    cout << "\nNew array: " << endl;
+    for (int i = 0; i < arr_length; i++)
+    {
+        cout << *(p + i) << " ";
+    }
+
+    int *p2;
+    int nums2[] = {1, 5, 3, 7};
+    int arr_length2 = sizeof(nums2) / sizeof(nums2[0]);
+
+    p2 = test(nums2, arr_length2);
+
+    cout << "\nNew array: " << endl;
+    for (int i = 0; i < arr_length2; i++)
+    {
+        cout << *(p2 + i) << " ";
+    }
+}
+*/
+
+//93. Write a C++ program to compute the sum of the two given arrays of integers, 
+//length 3 and find the array that has the largest sum.
+/*
+int *test(int nums1[], int nums2[])
+{
+    return nums1[0] + nums1[1] + nums1[2] >= nums2[0] + nums2[1] + nums2[2] ? nums1 : nums2;
+}
+
+int main()
+{
+    int *p;
+    int nums1[] = {1, 5, 7};
+    int nums2[] = {1, 5, 3};
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    p = test(nums1, nums2);
+    cout << "\nNew array: " << endl;
+    for (int i = 0; i < arr_length; i++)
+    {
+        cout << *(p + i) << " ";
+    }
+    return 0;
+}*/
+
+// 94. Write a C++ program to create an array taking two middle elements from a given array of integers of length even.
+/*static int *test(int nums1[], int arra_length)
+{
+    static int r_array[] = {nums1[arra_length / 2 -1 ], nums1[arra_length / 2]};
+    return r_array;
+}
+
+int main()
+{
+    int *p, i;
+    int nums1[] = {1, 5, 7, 9, 11, 13};
+    cout << "Original array:" << endl;
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    for (i = 0; i < arr_length; i++)
+    {
+        cout << nums1[i] << " ";
+    }
+    p = test(nums1, arr_length);
+    cout << "\nNew array: " << endl;
+    arr_length = sizeof(p) / sizeof(p[0]);
+    for (i = 0; i < arr_length; i++)
+    {
+        cout << *(p + i) << " ";
+    }
+}*/
+
+// 95. Write a C++ program to create an array by swapping the first
+// and last elements of a given array of integers with a length of at least 1.
+/*
+static int *test(int nums[], int arra_length)
+{
+    int first = nums[0];
+    nums[0] = nums[arra_length - 1];
+    nums[arra_length - 1] = first;
+    return nums;
+}
+
+int main()
+{
+    int *p, i;
+    int nums1[] = {1, 5, 7, 9, 11, 13};
+    cout << "Original array:" << endl;
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    for (i = 0; i < arr_length; i++)
+    {
+        cout << nums1[i] << " ";
+    }
+    p = test(nums1, arr_length);
+    cout << "\nNew array (after swapping the first and last elements of the said array): " << endl;
+    for (i = 0; i < arr_length; i++)
+    {
+        cout << *(p + i) << " ";
+    }
+}
+
+*/
+
+// 96. Write a C++ program to create an array length 3 from a given array (length at least 3) using the elements from the middle of the array.
+/*
+static int *test(int nums[], int arra_length)
+{
+    static int r_array[] = {nums[arra_length / 2  - 1 ], nums[arra_length /2], nums[arra_length / 2 + 1]};
+    return r_array;
+    
+}
+
+int main()
+{
+    int *result, i;
+    int nums[] = {1, 5, 7, 9, 11, 13};
+    int arr_length = sizeof(nums) / sizeof(nums[0]);
+
+    cout << "Original array:" << endl;
+
+    for (i = 0; i < arr_length; i++)
+        cout << nums[i] << " ";
+
+    result = test(nums, arr_length);
+    cout << "\nNew array:" << endl;
+    arr_length = sizeof(result) / sizeof(result[0]);
+    for (i = 0; i <= arr_length; i++)
+    {
+        cout << *(result + i) << " ";
+    }
+}*/
+
+// 97. Write a C++ program to find the largest value from the first, last, and middle elements of a given array of integers of odd length (at least 1).
+/*
+int test(int nums[], int arr_length)
+{
+    int first, max_elem, middle_elem, last_elem;
+    first = nums[0];
+    middle_elem = nums[arr_length / 2];
+    last_elem = nums[arr_length - 1];
+    max_elem = first;
+
+    if(middle_elem > max_elem) {
+        max_elem = middle_elem;
+    }
+    if(last_elem > max_elem) {
+        max_elem = last_elem;
+    }
+
+    return max_elem;
+
+}
+
+int main()
+{
+    int nums1[] = {1};
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    cout << test(nums1, arr_length) << endl;
+    int nums2[] = {1, 2, 9};
+    arr_length = sizeof(nums2) / sizeof(nums2[0]);
+    cout << test(nums2, arr_length) << endl;
+    int nums3[] = {1, 2, 9, 3, 3};
+    cout << test(nums3, arr_length) << endl;
+    int nums4[] = {1, 2, 3, 4, 5, 6, 7};
+    arr_length = sizeof(nums4) / sizeof(nums4[0]);
+    cout << test(nums4, arr_length) << endl;
+    int nums5[] = {1, 2, 2, 3, 7, 8, 9, 10, 6, 5, 4};
+    arr_length = sizeof(nums5) / sizeof(nums5[0]);
+    cout << test(nums5, arr_length) << endl;
+}
+*/
+
+// 98. Write a C++ program to count the even number of elements in a given array of integers.
+/*int test(int nums[], int arra_length)
+{
+    int evens = 0;
+    for (int i = 0; i < arra_length; i++)
+    {
+        if(nums[i] % 2 == 0)
+        {
+            evens += 1;
+        }
+    }
+
+    return evens;
+    
+}
+
+int main()
+{
+    int nums1[] = {1, 5, 7, 9, 10, 12};
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    cout << test(nums1, arr_length) << endl;
+    int nums2[] = {0, 2, 4, 6, 8, 10};
+    arr_length = sizeof(nums2) / sizeof(nums2[0]);
+    cout << test(nums2, arr_length) << endl;
+}*/
+
+// 99. Write a C++ program to compute the difference between the largest 
+//and smallest values in a given array of integers and length one or more.
+/*
+int test(int nums[], int arra_length)
+{
+    int max = nums[0];
+    int min = nums[0];
+
+    for (int i = 0; i < arra_length; i++)
+    {
+        if(nums[i] > max)
+        {
+            max = nums[i];
+        }
+
+        if(nums[i] < min)
+        {
+            min = nums[i];
+        }
+    }
+
+    int diff = max - min;
+    return diff;
+
+
+}
+
+int main()
+{
+    int nums1[] = {1, 5, 7, 9, 10, 12};
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    cout << test(nums1, arr_length) << endl;
+    int nums2[] = {0, 2, 4, 6, 8, 10};
+    arr_length = sizeof(nums2) / sizeof(nums2[0]);
+    cout << test(nums2, arr_length) << endl;
+}
+
+*/
+
+// 100. Write a C++ program to compute the sum of values in a given array of integers except the number 17. Return 0 if the given array has no integers.
+/*
+int test(int nums[], int arr_length)
+{
+    int total = 0;
+    for (int i = 0; i < arr_length; i++)
+    {
+        if (nums[i] != 17) total += nums[i];
+    }
+    return total;
+    
+}
+
+int main()
+{
+    int nums1[] = {1, 5, 7, 9, 10, 17};
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    cout << "Sum of values in the array of integers except the number 17:" << endl;
+    cout << test(nums1, arr_length) << endl;
+}
+
+*/
