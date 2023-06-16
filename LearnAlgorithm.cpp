@@ -1537,11 +1537,11 @@ int main()
 }
 */
 
-//73. Write a C++ program to create a new string from a given string after swapping the last two characters.
+// 73. Write a C++ program to create a new string from a given string after swapping the last two characters.
 /*
 string test(string s1)
 {
-    
+
     if (s1.length() > 1)
     {
         return s1.substr(0, s1.length() - 2) + s1[s1.length() - 1] + s1[s1.length() - 2];
@@ -1563,8 +1563,8 @@ int main()
 }
 */
 
-//74. Write a C++ program to check if a given string begins with 'abc' or 'xyz'.
-//If the string begins with 'abc' or 'xyz' return 'abc' or 'xyz' otherwise return the empty string.
+// 74. Write a C++ program to check if a given string begins with 'abc' or 'xyz'.
+// If the string begins with 'abc' or 'xyz' return 'abc' or 'xyz' otherwise return the empty string.
 /*
 string test(string s1)
 {
@@ -1603,8 +1603,8 @@ int main()
     cout << test("xyzsderxy") << endl;
 }*/
 
-// 76. Write a C++ program to add two given strings. 
-//If the given strings have different lengths, remove the characters from the longer string.
+// 76. Write a C++ program to add two given strings.
+// If the given strings have different lengths, remove the characters from the longer string.
 /*
 string test(string s1, string s2)
 {
@@ -1619,7 +1619,7 @@ string test(string s1, string s2)
     {
         return s1 + s2;
     }
-}   
+}
 
 int main()
 {
@@ -1628,8 +1628,8 @@ int main()
     cout << test("JS", "Python") << endl;
 }*/
 
-//77. Write a C++ program to create a new string using 3 copies of the first 2 characters of a given string.
-//If the length of the given string is less than 2 use the whole string.
+// 77. Write a C++ program to create a new string using 3 copies of the first 2 characters of a given string.
+// If the length of the given string is less than 2 use the whole string.
 /*
 string test(string s1)
 {
@@ -1649,9 +1649,9 @@ int main()
     cout << test("J") << endl;
 }*/
 
-//78. Write a C++ program to create a new string from a string.
-//Return the given string without the first two characters if the two characters at the beginning and end are the same.
-//Otherwise, return the original string.
+// 78. Write a C++ program to create a new string from a string.
+// Return the given string without the first two characters if the two characters at the beginning and end are the same.
+// Otherwise, return the original string.
 /*
 string test(string s1)
 {
@@ -1670,8 +1670,8 @@ int main()
     cout << test("abcabab") << endl;
 }*/
 
-//79. Write a C++ program to create a string from a given string without the first and last character.
-//This is possible if the first or last characters are 'a' otherwise return the original given string.
+// 79. Write a C++ program to create a string from a given string without the first and last character.
+// This is possible if the first or last characters are 'a' otherwise return the original given string.
 /*
 string test(string s)
 {
@@ -1683,7 +1683,7 @@ string test(string s)
     {
         s = s.erase(0,1);
     }
-    
+
     return s;
 }
 
@@ -1696,8 +1696,8 @@ int main()
     cout << test("jython") << endl;
 }*/
 
-//80. Write a C++ program to create a new string from a given string.
-//If the first or first two characters are 'a', return the string without those 'a' characters, otherwise return the original string.
+// 80. Write a C++ program to create a new string from a given string.
+// If the first or first two characters are 'a', return the string without those 'a' characters, otherwise return the original string.
 /*
 string test(string s)
 {
@@ -1711,7 +1711,7 @@ string test(string s)
             s = s.substr(2);
         }
     }
-    
+
     return s;
 }
 
@@ -1725,8 +1725,8 @@ int main()
 }
 */
 
-//81. Write a C++ program to check a given array of integers of length 1 or more and 
-//return true if 10 appears as either first or last element in the given array.
+// 81. Write a C++ program to check a given array of integers of length 1 or more and
+// return true if 10 appears as either first or last element in the given array.
 /*
 bool test(int nums[], int arr_length)
 {
@@ -1750,8 +1750,8 @@ int main()
     cout << test(nums4, arr_length) << endl;
 }*/
 
-//82. Write a C++ program to check a given array of integers of length 1 or more.
-//The program will return true if the first element and the last element are equal in the given array.
+// 82. Write a C++ program to check a given array of integers of length 1 or more.
+// The program will return true if the first element and the last element are equal in the given array.
 /*
 bool test(int nums[], int arr_length)
 {
@@ -1846,7 +1846,7 @@ int main()
     }
 }*/
 
-//86. Write a C++ program to reverse a given array of integers of length 5.
+// 86. Write a C++ program to reverse a given array of integers of length 5.
 /*
 int *test(int nums[])
 {
@@ -2036,8 +2036,8 @@ int main()
 }
 */
 
-//93. Write a C++ program to compute the sum of the two given arrays of integers, 
-//length 3 and find the array that has the largest sum.
+// 93. Write a C++ program to compute the sum of the two given arrays of integers,
+// length 3 and find the array that has the largest sum.
 /*
 int *test(int nums1[], int nums2[])
 {
@@ -2122,7 +2122,7 @@ static int *test(int nums[], int arra_length)
 {
     static int r_array[] = {nums[arra_length / 2  - 1 ], nums[arra_length /2], nums[arra_length / 2 + 1]};
     return r_array;
-    
+
 }
 
 int main()
@@ -2198,7 +2198,7 @@ int main()
     }
 
     return evens;
-    
+
 }
 
 int main()
@@ -2211,8 +2211,8 @@ int main()
     cout << test(nums2, arr_length) << endl;
 }*/
 
-// 99. Write a C++ program to compute the difference between the largest 
-//and smallest values in a given array of integers and length one or more.
+// 99. Write a C++ program to compute the difference between the largest
+// and smallest values in a given array of integers and length one or more.
 /*
 int test(int nums[], int arra_length)
 {
@@ -2260,7 +2260,7 @@ int test(int nums[], int arr_length)
         if (nums[i] != 17) total += nums[i];
     }
     return total;
-    
+
 }
 
 int main()
@@ -2272,3 +2272,151 @@ int main()
 }
 
 */
+
+///*****************************************************************************************
+// 101. Write a C++ program to compute the sum of the numbers in a given array
+// except the ones starting with 5 followed by at least one 6. Return 0 if the given array has no integers.
+/*
+static int test(int nums[], int arr_length)
+{
+    int total = 0;
+    int inSection = 0;
+    int flag = 0;
+    for (int i = 0; i < arr_length; i++)
+    {
+        inSection = 0;
+        if (nums[i] == 5)
+        {
+            inSection = 0;
+            flag = 1;
+        }
+        if (inSection = 0 && nums[i] == 6)
+        {
+            if (flag == 1)
+            {
+                total = total - 5;
+                inSection = 1;
+            }
+            flag  = 0;
+        }
+
+        if(inSection == 0)
+        {
+            total += nums[i];
+        }
+    }
+    return total;
+}
+
+int main()
+{
+    int nums1[] = {1, 5, 5, 10, 5, 17};
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    cout << "Sum of the numbers of the said array except those numbers starting with 5 followed by atleast one 6: " << endl;
+    cout << test(nums1, arr_length) << endl;
+    int nums2[] = {1, 5, 6, 9, 10, 17};
+    arr_length = sizeof(nums2) / sizeof(nums2[0]);
+    cout << "Sum of the numbers of the said array except those numbers starting with 5 followed by atleast one 6: " << endl;
+    cout << test(nums2, arr_length) << endl;
+}
+*/
+
+// 102. Write a C++ program to check if a given array of integers contains 5 next to a 5 somewhere.
+/*
+static bool test(int nums[], int arra_length)
+{
+    for (int i = 0; i < arra_length - 1; i++)
+    {
+       if(nums[i] == 5 && nums[i] == nums[i + 1]) return true; 
+    }
+    return false;
+    
+}
+int main()
+{
+
+ int nums1[] = { 1, 5, 6, 9, 10, 17 };
+  int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+  cout << test(nums1, arr_length) << endl; 
+  int nums2[] = { 1, 5, 5, 9, 10, 17 };
+  arr_length = sizeof(nums2) / sizeof(nums2[0]);
+  cout << test(nums2, arr_length) << endl;
+  int nums3[] = { 1, 5, 5, 9, 10, 17, 5, 5 };
+  arr_length = sizeof(nums3) / sizeof(nums3[0]);
+  cout << test(nums3, arr_length) << endl;
+}
+*/
+
+
+//103. Write a C++ program to check whether a given array of integers contains 5's and 7's.
+/*
+static bool test(int nums[], int arr_length) {
+    for (int i = 0; i < arr_length; i++)
+    {
+        if(nums[i] == 5 || nums[i] == 7 )
+        {
+            return true;
+        }
+    }
+    return false;
+
+}
+
+int main()
+{
+      int nums1[] = { 1, 5, 6, 9, 10, 17 };
+  int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+  cout << test(nums1, arr_length) << endl; 
+  int nums2[] = { 1, 4, 7, 9, 10, 17 };
+  arr_length = sizeof(nums2) / sizeof(nums2[0]);
+  cout << test(nums2, arr_length) << endl;
+  int nums3[] = { 1, 1, 2, 9, 10, 17 };
+  arr_length = sizeof(nums3) / sizeof(nums3[0]);
+  cout << test(nums3, arr_length) << endl;
+  return 0; 
+}
+
+*/
+
+
+//104. Write a C++ program that checks if the sum of all 5' in the array is exactly 15.
+/*
+static bool test(int nums[], int arr_length)
+{
+    int total;
+    for(int i = 0; i < arr_length; i++)
+    {
+        if(nums[i] == 5)
+        {
+            total += 5;
+        }
+    }
+    return sum == 15;
+}
+
+
+int main()
+{
+      int nums1[] = {1, 5, 6, 9, 10, 17};
+  int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+  cout << test(nums1, arr_length) << endl; 
+  int nums2[] = {1, 5, 5, 5, 10, 17};
+  arr_length = sizeof(nums2) / sizeof(nums2[0]);
+  cout << test(nums2, arr_length) << endl;
+  int nums3[] = { 1, 1, 5, 5, 5, 5 };
+  arr_length = sizeof(nums3) / sizeof(nums3[0]);
+  cout << test(nums3, arr_length) << endl;
+}
+*/
+
+//105. Write a C++ program to check if the number of 3's is greater than the number of 5's.
+
+static bool test(int nums[], int arra_length)
+{
+
+}
+
+int main()
+{
+    
+}

@@ -4,6 +4,7 @@
     "sstream": "cpp",
     "regex": "cpp",
     "ostream": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "valarray": "cpp"
   }
 }
