@@ -2410,13 +2410,63 @@ int main()
 */
 
 //105. Write a C++ program to check if the number of 3's is greater than the number of 5's.
-
+/*
 static bool test(int nums[], int arra_length)
 {
-
+   
+        return (nums[3] > nums[4]);
+    
 }
 
 int main()
 {
+        int nums1[] = {1, 5, 6, 9, 3, 3};
+        int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+        cout << test(nums1, arr_length) << endl;
+        int nums2[] = {1, 5, 5, 5, 10, 17};
+        arr_length = sizeof(nums2) / sizeof(nums2[0]);
+        cout << test(nums2, arr_length) << endl;
+        int nums3[] = {1, 3, 3, 5, 5, 5};
+        arr_length = sizeof(nums3) / sizeof(nums3[0]);
+        cout << test(nums3, arr_length) << endl;
+}*/
+
+// 106. Write a C++ program to check if a given array of integers contains a 3 or a 5.
+/*
+static bool test(int nums1[], int arr_length)
+{
+    for (int i = 0; i < arr_length; i++)
+    {
+        if(nums1[i] == 5 || nums1[i] == 3) return true;
+      
+    }
+    return false;
+    
+}
+
+int main()
+{
+    int nums1[] = {5, 5, 5, 5, 5};
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    cout << test(nums1, arr_length) << endl;
+    int nums2[] = {3, 3, 3, 3};
+    arr_length = sizeof(nums2) / sizeof(nums2[0]);
+    cout << test(nums2, arr_length) << endl;
+    int nums3[] = {3, 3, 3, 5, 5, 5};
+    arr_length = sizeof(nums3) / sizeof(nums3[0]);
+    cout << test(nums3, arr_length) << endl;
+    int nums4[] = {1, 6, 8, 10};
+    arr_length = sizeof(nums4) / sizeof(nums4[0]);
+    cout << test(nums4, arr_length) << endl;
+}*/
+
+//107. Write a C++ program to check if a given array of integers contains no 3 or 5.
+
+static bool test(int nums[], int arr_length)
+{
+    for (int i = 0; i < arr_length; i++)
+    {
+        
+    }
     
 }
