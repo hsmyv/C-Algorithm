@@ -2461,12 +2461,265 @@ int main()
 }*/
 
 //107. Write a C++ program to check if a given array of integers contains no 3 or 5.
+/*
+static bool test(int nums[], int arr_length)
+{
+    bool three  = false;
+    bool five = false;
 
+    for (int i = 0; i < arr_length; i++)
+    {
+        if(nums[i] == 3) {three = true;}
+        if(nums[i] == 5) {five = true;}
+        if (three && five) return false;
+
+    }
+    return true;
+    
+}
+
+int main()
+{
+    int nums1[] = {5, 5, 5, 5, 5};
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    cout << test(nums1, arr_length) << endl; 
+    int nums2[] = {3, 3, 3, 3};
+    arr_length = sizeof(nums2) / sizeof(nums2[0]);
+    cout << test(nums2, arr_length) << endl;
+    int nums3[] = {3, 3, 3, 5, 5, 5};
+    arr_length = sizeof(nums3) / sizeof(nums3[0]);
+    cout << test(nums3, arr_length) << endl;
+    int nums4[] = {1, 6, 8, 10};
+    arr_length = sizeof(nums4) / sizeof(nums4[0]);
+    cout << test(nums4, arr_length) << endl;
+}
+*/
+
+// 108. Write a C++ program to check if an array of integers contains a 3 next to a 3 or a 5 next to a 5 or both.
+
+/*
+static bool test(int nums[], int arr_length)
+{
+    for (int i = 0; i < arr_length ; i++) if((nums[i] == 3 && nums[i + 1] == 3) || (nums[i] == 5 && nums[i + 1] == 5)) return true;   
+    return false;
+}
+
+int main()
+{
+    int nums1[] = {5, 5, 5, 5, 5};
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    cout << test(nums1, arr_length) << endl;
+    int nums2[] = {1, 2, 3, 4};
+    arr_length = sizeof(nums2) / sizeof(nums2[0]);
+    cout << test(nums2, arr_length) << endl;
+    int nums3[] = {3, 3, 5, 5, 5, 5};
+    arr_length = sizeof(nums3) / sizeof(nums3[0]);
+    cout << test(nums3, arr_length) << endl;
+    int nums4[] = {1, 5, 5, 7, 8, 10};
+    arr_length = sizeof(nums4) / sizeof(nums4[0]);
+    cout << test(nums4, arr_length) << endl;
+    return 0;
+}
+*/
+
+// 109. Write a C++ program to check a given array of integers. Then, return true if the given array contains two 5's next to each other,
+// or two 5's separated by one element.
+/*
+static bool test(int nums[], int arr_length)
+{
+    for (int i = 0; i < arr_length - 1; i++)
+    {
+        if(nums[i] == 5 && nums[i + 1] == 5) return true;
+        if (i + 2 < arr_length && nums[i] == 5 && nums[i + 2] == 5) return true;
+    }
+    return false;
+}
+
+int main()
+{
+    int nums1[] = {5, 5, 1, 5, 5};
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    cout << test(nums1, arr_length) << endl;
+    int nums2[] = {1, 2, 3, 4};
+    arr_length = sizeof(nums2) / sizeof(nums2[0]);
+    cout << test(nums2, arr_length) << endl;
+    int nums3[] = {3, 3, 5, 5, 5, 5};
+    arr_length = sizeof(nums3) / sizeof(nums3[0]);
+    cout << test(nums3, arr_length) << endl;
+    int nums4[] = {1, 5, 5, 7, 8, 10};
+    arr_length = sizeof(nums4) / sizeof(nums4[0]);
+    cout << test(nums4, arr_length) << endl;
+    return 0;
+}
+*/
+
+//110. Write a C++ program to check a given array of integers and return true if there is a 3 with a 5 somewhere later in the given array.
+/*
 static bool test(int nums[], int arr_length)
 {
     for (int i = 0; i < arr_length; i++)
     {
-        
+        if(nums[i] == 3 && nums[i + 1] == 5) return true;
     }
+    return false;
     
+}
+
+int main()
+{
+    int nums1[] = {3, 5, 1, 3, 7};
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    cout << test(nums1, arr_length) << endl;
+    int nums2[] = {1, 2, 3, 4};
+    arr_length = sizeof(nums2) / sizeof(nums2[0]);
+    cout << test(nums2, arr_length) << endl;
+    int nums3[] = {3, 3, 5, 5, 5, 5};
+    arr_length = sizeof(nums3) / sizeof(nums3[0]);
+    cout << test(nums3, arr_length) << endl;
+    int nums4[] = {2, 5, 5, 7, 8, 10};
+    arr_length = sizeof(nums4) / sizeof(nums4[0]);
+    cout << test(nums4, arr_length) << endl;
+    return 0;
+}
+
+*/
+
+// 111. Write a C++ program to check a given array of integers. 
+//The program will return true if the given array contains either 2 even or 2 odd values all next to each other.
+/*
+static bool test(int nums[], int arr_length)
+{
+    for (int i = 0; i < arr_length; i++)
+    {
+        if(nums[i] % 2 == 0 && nums[i + 1] % 2 == 0) return true;
+        if(nums[i] % 2 == 1 && nums[i + 1] % 2 == 1) return true;
+    }
+    return false;
+}
+int main()
+{
+    int nums1[] = {3, 5, 1, 3, 7};
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    cout << test(nums1, arr_length) << endl;
+    int nums2[] = {1, 2, 3, 4};
+    arr_length = sizeof(nums2) / sizeof(nums2[0]);
+    cout << test(nums2, arr_length) << endl;
+    int nums3[] = {3, 3, 5, 5, 5, 5};
+    arr_length = sizeof(nums3) / sizeof(nums3[0]);
+    cout << test(nums3, arr_length) << endl;
+    int nums4[] = {2, 4, 5, 6};
+    arr_length = sizeof(nums4) / sizeof(nums4[0]);
+    cout << test(nums4, arr_length) << endl;
+    return 0;
+}
+*/
+
+//112. Write a C++ program to check a given array of integers. 
+//The program will return true if the value 5 appears 5 times and there are no 5 next to each other.
+/*/
+static bool test(int nums[], int arr_length)
+{
+    int count;
+    for(int i = 0; i < arr_length; i++)
+    {
+        if(nums[i] == 5)
+        {
+            count++;
+            // Check if the next element is also 5
+            if (i < arr_length - 1 && nums[i + 1] == 5)
+            {
+                return false; 
+            }
+        }
+    }
+    return count == 5; // Return true if there are exactly five 5s, otherwise false
+}
+int main() 
+ {  
+  int nums1[] = {3, 5, 1, 5, 3, 5, 7, 5, 1, 5};
+  int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+  cout << test(nums1, arr_length) << endl; 
+  int nums2[] = {3, 5, 5, 5, 5, 5, 5};
+  arr_length = sizeof(nums2) / sizeof(nums2[0]);
+  cout << test(nums2, arr_length) << endl;
+  int nums3[] = {3, 5, 2, 5, 4, 5, 7,  5, 8,  5};
+  arr_length = sizeof(nums3) / sizeof(nums3[0]);
+  cout << test(nums3, arr_length) << endl;
+  int nums4[] = {2, 4, 5, 5, 5, 5};
+  arr_length = sizeof(nums4) / sizeof(nums4[0]);
+  cout << test(nums4, arr_length) << endl;
+  return 0;    
+}
+
+*/
+
+// 113. Write a C++ program to check a given array of integers and return true if every 5 that appears in the given array is next to another 5.
+/*
+static bool test(int nums[], int arr_length)
+{
+    bool flag = true;
+    for (int i = 0; i < arr_length; i++)
+    {
+        if(nums[i] == 5)
+        {
+            if((i> 0 && nums[i - 1] == 5) || (i < arr_length - 1 && nums[i + 1] == 5)) flag = true;
+            else if(i == arr_length - 1) flag = false;
+            else return false;
+            
+        }
+    }
+    return flag;
+
+}
+
+int main()
+{
+    int nums1[] = {3, 5, 5, 3, 7};
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    cout << test(nums1, arr_length) << endl;
+    int nums2[] = {3, 5, 5, 4, 1, 5, 7};
+    arr_length = sizeof(nums2) / sizeof(nums2[0]);
+    cout << test(nums2, arr_length) << endl;
+    int nums3[] = {3, 5, 5, 5, 5, 5};
+    arr_length = sizeof(nums3) / sizeof(nums3[0]);
+    cout << test(nums3, arr_length) << endl;
+    int nums4[] = {2, 4, 5, 5, 6, 7, 5};
+    arr_length = sizeof(nums4) / sizeof(nums4[0]);
+    cout << test(nums4, arr_length) << endl;
+    return 0;
+}
+*/
+
+
+//****
+// 114. Write a C++ program to check a given array of integers. The program will return true if the specified number of the same elements appears at the start and end of the given array.
+
+
+static bool test(int nums[], int arr_length, int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        if(nums[i] != nums[arr_length - n + i])
+        {
+            return false;
+        }
+    }
+    return true;
+    
+}
+int main()
+{
+    int nums1[] = {3, 7, 5, 5, 3, 7};
+    int n = 2;
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    cout << test(nums1, arr_length, n) << endl;
+    int nums2[] = {3, 7, 5, 5, 3, 7};
+    n = 3;
+    arr_length = sizeof(nums2) / sizeof(nums2[0]);
+    cout << test(nums2, arr_length, n) << endl;
+    int nums3[] = {3, 7, 5, 5, 3, 7, 5};
+    n = 3;
+    arr_length = sizeof(nums3) / sizeof(nums3[0]);
+    cout << test(nums3, arr_length, n) << endl;
+    return 0;
 }
