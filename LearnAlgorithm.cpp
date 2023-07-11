@@ -2694,7 +2694,7 @@ int main()
 //****
 // 114. Write a C++ program to check a given array of integers. The program will return true if the specified number of the same elements appears at the start and end of the given array.
 
-
+/*
 static bool test(int nums[], int arr_length, int n)
 {
     for (int i = 0; i < n; i++)
@@ -2721,5 +2721,36 @@ int main()
     n = 3;
     arr_length = sizeof(nums3) / sizeof(nums3[0]);
     cout << test(nums3, arr_length, n) << endl;
+    return 0;
+}*/
+
+//******
+// 115. Write a C++ program to check a given array of integers and return true if the array contains three increasing adjacent numbers.
+
+
+static bool test(int nums[], int arr_length)
+{
+    for (int i = 0; i <= arr_length - 3; i++)
+    {
+        if(nums[i] == nums[i + 1] - 1 && nums[i] == nums[i + 2] - 2)
+        {
+            return true;
+        }
+    }
+    return false;
+    
+}
+
+int main()
+{
+    int nums1[] = {1, 2, 3, 5, 3, 7};
+    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+    cout << test(nums1, arr_length) << endl;
+    int nums2[] = {3, 7, 5, 5, 3, 7};
+    arr_length = sizeof(nums2) / sizeof(nums2[0]);
+    cout << test(nums2, arr_length) << endl;
+    int nums3[] = {3, 7, 5, 5, 6, 7, 5};
+    arr_length = sizeof(nums3) / sizeof(nums3[0]);
+    cout << test(nums3, arr_length) << endl;
     return 0;
 }
