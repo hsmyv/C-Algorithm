@@ -2728,29 +2728,113 @@ int main()
 // 115. Write a C++ program to check a given array of integers and return true if the array contains three increasing adjacent numbers.
 
 
-static bool test(int nums[], int arr_length)
-{
-    for (int i = 0; i <= arr_length - 3; i++)
-    {
-        if(nums[i] == nums[i + 1] - 1 && nums[i] == nums[i + 2] - 2)
-        {
-            return true;
-        }
-    }
-    return false;
+// static bool test(int nums[], int arr_length)
+// {
+//     for (int i = 0; i <= arr_length - 3; i++)
+//     {
+//         if(nums[i] == nums[i + 1] - 1 && nums[i] == nums[i + 2] - 2)
+//         {
+//             return true;
+//         }
+//     }
+//     return false;
     
+// }
+
+// int main()
+// {
+//     int nums1[] = {1, 2, 3, 5, 3, 7};
+//     int arr_length = sizeof(nums1) / sizeof(nums1[0]);
+//     cout << test(nums1, arr_length) << endl;
+//     int nums2[] = {3, 7, 5, 5, 3, 7};
+//     arr_length = sizeof(nums2) / sizeof(nums2[0]);
+//     cout << test(nums2, arr_length) << endl;
+//     int nums3[] = {3, 7, 5, 5, 6, 7, 5};
+//     arr_length = sizeof(nums3) / sizeof(nums3[0]);
+//     cout << test(nums3, arr_length) << endl;
+//     return 0;
+// }
+
+
+
+
+// fill 7*7 array in a spesific pattern
+const int N = 7;
+
+int matrix[N][N] = {0};
+
+int corner = 0;
+
+bool directions[4] = {true, false, false, false}; // left -> down -> right -> up
+
+void printMatrix(){
+    for (int i = 0 ; i < N; ++i){
+        for (int j = 0; j < N; ++j){
+            cout << matrix[i][j] << " ";
+            }
+        cout << endl;
+    }
 }
 
-int main()
-{
-    int nums1[] = {1, 2, 3, 5, 3, 7};
-    int arr_length = sizeof(nums1) / sizeof(nums1[0]);
-    cout << test(nums1, arr_length) << endl;
-    int nums2[] = {3, 7, 5, 5, 3, 7};
-    arr_length = sizeof(nums2) / sizeof(nums2[0]);
-    cout << test(nums2, arr_length) << endl;
-    int nums3[] = {3, 7, 5, 5, 6, 7, 5};
-    arr_length = sizeof(nums3) / sizeof(nums3[0]);
-    cout << test(nums3, arr_length) << endl;
-    return 0;
+void next(int direction) {
+    for (int i = 0; i < 4; ++i) {
+        directions[i] = (i == direction - 1);
+    }
+}
+
+
+int main(){
+    int row = 0;
+    int col = N - 1;
+    int corner = 0;
+
+    for (int step = N * N; step > 0; --step){
+        if(directions[0]){
+            matrix[row][col--] = step;
+
+            if( col == corner){
+                // directions[0] = false;
+                // directions[1] = true;
+                next(2);
+            }
+        }else if(directions[1]){
+            matrix[row++][col] = step;
+            
+            if(row == (N - 1) - corner){
+                // directions[1] = false;
+                // directions[2] = true;
+                next(3);
+
+            }
+
+        }else if(directions[2]){
+             matrix[row][col++] = step;
+
+             if(col == (N - 1) - corner){
+                // directions[2] = false;
+                // directions[3] = true;    
+                next(4);
+        
+            }
+
+        }else if(directions[3]){
+            matrix[row--][col] = step;
+
+            if(row == corner){
+                row++;
+                col--;
+                corner++;
+
+                // directions[3] = false;
+                // directions[0] = true;   
+                next(1);
+
+
+            }
+
+        }
+        //   cout << row << " - " << col << endl;
+
+     }
+        printMatrix();
 }
