@@ -2759,82 +2759,139 @@ int main()
 
 
 // fill 7*7 array in a spesific pattern
-const int N = 7;
+// const int N = 7;
 
-int matrix[N][N] = {0};
+// int matrix[N][N] = {0};
 
-int corner = 0;
+// int corner = 0;
 
-bool directions[4] = {true, false, false, false}; // left -> down -> right -> up
+// bool directions[4] = {true, false, false, false}; // left -> down -> right -> up
 
-void printMatrix(){
-    for (int i = 0 ; i < N; ++i){
-        for (int j = 0; j < N; ++j){
-            cout << matrix[i][j] << " ";
-            }
-        cout << endl;
-    }
-}
+// void printMatrix(){
+//     for (int i = 0 ; i < N; ++i){
+//         for (int j = 0; j < N; ++j){
+//             cout << matrix[i][j] << " ";
+//             }
+//         cout << endl;
+//     }
+// }
 
-void next(int direction) {
-    for (int i = 0; i < 4; ++i) {
-        directions[i] = (i == direction - 1);
-    }
-}
+// void next(int direction) {
+//     for (int i = 0; i < 4; ++i) {
+//         directions[i] = (i == direction - 1);
+//     }
+// }
 
 
-int main(){
-    int row = 0;
-    int col = N - 1;
-    int corner = 0;
+// int main(){
+//     int row = 0;
+//     int col = N - 1;
+//     int corner = 0;
 
-    for (int step = N * N; step > 0; --step){
-        if(directions[0]){
-            matrix[row][col--] = step;
+//     for (int step = N * N; step > 0; --step){
+//         if(directions[0]){
+//             matrix[row][col--] = step;
 
-            if( col == corner){
-                // directions[0] = false;
-                // directions[1] = true;
-                next(2);
-            }
-        }else if(directions[1]){
-            matrix[row++][col] = step;
+//             if( col == corner){
+//                 next(2);
+//             }
+//         }else if(directions[1]){
+//             matrix[row++][col] = step;
             
-            if(row == (N - 1) - corner){
-                // directions[1] = false;
-                // directions[2] = true;
-                next(3);
+//             if(row == (N - 1) - corner){
+//                 next(3);
 
-            }
+//             }
 
-        }else if(directions[2]){
-             matrix[row][col++] = step;
+//         }else if(directions[2]){
+//              matrix[row][col++] = step;
 
-             if(col == (N - 1) - corner){
-                // directions[2] = false;
-                // directions[3] = true;    
-                next(4);
+//              if(col == (N - 1) - corner){
+//                 next(4);
         
-            }
+//             }
 
-        }else if(directions[3]){
-            matrix[row--][col] = step;
+//         }else if(directions[3]){
+//             matrix[row--][col] = step;
 
-            if(row == corner){
-                row++;
-                col--;
-                corner++;
+//             if(row == corner){
+//                 row++;
+//                 col--;
+//                 corner++;
 
-                // directions[3] = false;
-                // directions[0] = true;   
-                next(1);
+//                 next(1);
 
 
-            }
+//             }
 
-        }
-        //   cout << row << " - " << col << endl;
+//         }
+//         //   cout << row << " - " << col << endl;
 
-     }
-        printMatrix();
-}
+//      }
+//         printMatrix();
+// }
+
+
+
+
+
+
+
+
+// 116. Check if Array is Non-Decreasing
+
+// Write a C++ program to check if the value of each element is equal or greater than the value of the previous element of a given array of integers.
+
+
+// int numbers[] = {1, 5, 5, 7, 8, 10}; //output : true
+// // int numbers[] = {1, 5, 8, 7, 8, 10}; //output : false
+
+// int size = sizeof(numbers) / sizeof(numbers[0]);
+
+// bool printCheckArray(int arrayNumber[], int size)
+// {
+//     for (int i = 0; i < size - 1; i++) {
+//         if (arrayNumber[i] > arrayNumber[i + 1]) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// int main()
+// {
+//     cout << (printCheckArray(numbers, size) ? "true" : "false") << endl;
+//     return 0;
+// }
+
+
+
+
+
+
+// 117. Check if Two Adjacent '15's Exist in Array
+
+// Write a C++ program to check if there are two values 15, 15 adjacent to each other in a given array (length should be at least 2) of integers. Return true otherwise false.
+
+
+
+// // int numbers[] = {5, 5, 1, 15, 15}; // output: true
+// int numbers[] = {15, 2, 3, 4, 15}; // output: false
+
+// int size      = sizeof(numbers) / sizeof(numbers[0]);
+
+// static bool printCheckArray(int numbers[], int size){
+//     for (int i = 0; i < size - 1; i++){
+//         if(numbers[i] == 15 && numbers[i + 1] == 15){
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+
+
+// int main(){
+//     cout << (printCheckArray(numbers, size) ? "true" : "false") << endl;
+// }
+
+
