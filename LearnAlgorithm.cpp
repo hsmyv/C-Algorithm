@@ -2895,3 +2895,70 @@ int main()
 // }
 
 
+
+
+
+
+
+
+
+//Contains duplicate
+// Give an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct
+
+
+
+
+int nums[] = {4,2,3,1};                     //output: true
+int size = sizeof(nums) / sizeof(nums[0]);
+
+
+//Bruteforce solution
+// static bool containsDuplicate(int nums[], int size){
+//     for (int i = 1; i < size; i++){
+//             for (int j = i - 1; j >= 0; --j){
+//                 if(nums[i] == nums[j]){
+//                     return true;
+//                 }
+//             }
+//     }
+//     return false;
+// }
+
+
+
+//sorting solution
+// static bool containsDuplicate(int nums[], int size){
+    
+//     for (int i = 0; i < size; i++){
+//         if(nums[i] == nums[i - 1])
+//             return true;
+//     }
+//     return false;
+
+// }
+
+// void insertionsort(int arr[], int n) {
+//     for (int i = 1; i < n; ++i) {
+//         int key = arr[i];
+//         int j = i - 1;
+
+//         while (j >= 0 && arr[j] > key) {
+//             arr[j + 1] = arr[j];
+//             j--;
+//         }
+//         arr[j + 1] = key;
+//     }
+// }
+
+
+
+
+
+
+
+
+int main(){
+    insertionsort(nums,size);
+    cout << (containsDuplicate(nums, size) ? "true" : "false" ) << endl;
+
+}
