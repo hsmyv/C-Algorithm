@@ -2908,8 +2908,8 @@ int main()
 
 
 
-int nums[] = {4,2,3,1};                     //output: true
-int size = sizeof(nums) / sizeof(nums[0]);
+// int nums[] = {4,2,3,1};                     //output: true
+// int size = sizeof(nums) / sizeof(nums[0]);
 
 
 //Bruteforce solution
@@ -2952,13 +2952,77 @@ int size = sizeof(nums) / sizeof(nums[0]);
 
 
 
+// int main(){
+//     insertionsort(nums,size);
+//     cout << (containsDuplicate(nums, size) ? "true" : "false" ) << endl;
+
+// }
 
 
 
 
 
-int main(){
-    insertionsort(nums,size);
-    cout << (containsDuplicate(nums, size) ? "true" : "false" ) << endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Valid Anagram
+// Given two strings s and t, return true it f is an anagram of s, and false otherwise.
+
+
+
+// static bool isAnagram(string s, string t)
+// {
+//     if(s.size() != t.size()){
+//         return false;
+//     }
+
+//     /*
+//         input  :  anagram
+//         input2 :  nagaram    
+
+//         1)  map_s['a']++ => [a: 1]
+//             map_t['n']++ => [n: 1]
+
+//         2)  map_s['n']++ => [a: 1, n: 1]
+//             map_t['a']++ => [a: 1, n: 1]
+
+            
+//     */
+//     unordered_map<char, short int> map_s;
+//     unordered_map<char, short int> map_t;
+
+//     for (size_t i = 0; i < s.size(); ++i){
+//         map_s[s[i]]++;
+//         map_t[t[i]]++;
+//     }
+
+//     return map_s == map_t;
+// }
+
+
+
+//Optimal solution
+static bool isAnagram(sring s, string t){
 
 }
+
+int main(){
+   string s = "anagsam";
+   string t = "nagaram";
+    cout << (isAnagram(s,t) ? "true" : "false") << endl; 
+}
+
+
