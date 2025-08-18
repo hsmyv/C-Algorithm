@@ -3014,15 +3014,72 @@ int main()
 
 
 
-//Optimal solution
-static bool isAnagram(sring s, string t){
-
-}
-
-int main(){
-   string s = "anagsam";
-   string t = "nagaram";
-    cout << (isAnagram(s,t) ? "true" : "false") << endl; 
-}
+//The best solution : The Caracter Frequency and Debt method
 
 
+// static bool isAnagram(string s, string t){
+//     short int freq[26] = {0};
+//     int debt = 0;
+
+//     if (s.size() != t.size()) return false;
+
+//     for (int i = 0; i < s.size(); ++i){
+//         short int sPrev = freq[(s[i] - 'a')];
+//         short int tPrev = freq[(t[i] - 'a')];
+
+//         ++freq[(s[i] - 'a')];
+//         --freq[(t[i] - 'a')];
+
+//         short int sCurr = freq[(s[i] - 'a')];
+//         short int tCurr = freq[(t[i] - 'a')];
+
+//         debt = debt + (abs(sCurr) - abs(sPrev)) + (abs(tCurr) - abs(tPrev));
+//     }
+
+//     return debt == 0;
+// }
+
+// int main(){
+//    string s = "anagram";
+//    string t = "nagaram";
+//     cout << (isAnagram(s,t) ? "true" : "false") << endl; 
+// }
+
+
+
+
+
+
+// 118. Find Larger Average Between First and Second Halves of Array
+
+// Write a C++ program to find the largest average value between the first and second halves of a given array of integers. 
+// Ensure that the minimum length is at least 2. Assume that the second half begins at index (array length)/2.
+
+
+//  int findLargAverageValue(int numbers[], int size){
+
+//     int half = size / 2;
+    
+//     int sumFirst = 0;
+//     for (int i = 0; i < half; i++){
+//         sumFirst += numbers[i];
+//     }
+
+//     int sumSecond = 0;
+//     for (int i = half; i < size; i++){
+//         sumSecond += numbers[i];
+//     }
+
+//     double firstAvg = (double)sumFirst / half;
+//     double secondAvg = (double)sumSecond / (size - half);
+
+//     return (firstAvg > secondAvg) ? firstAvg : secondAvg;
+
+// }
+
+
+// int main(){
+//     int numbs[] = {1,2,3,4,5,6};
+//     int size = sizeof(numbs) / sizeof(numbs[0]);
+//     cout << findLargAverageValue(numbs, size) << endl;
+// }
