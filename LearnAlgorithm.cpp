@@ -3083,3 +3083,74 @@ int main()
 //     int size = sizeof(numbs) / sizeof(numbs[0]);
 //     cout << findLargAverageValue(numbs, size) << endl;
 // }
+
+
+
+
+
+
+
+// Given an array of integers nums and an integer target, return indices of the two numbers such thay they add up to target
+// Example 1: 
+//Input: nums = [2,7,11,15], target = 9
+//Output: [0,1]
+//Explanation: Because nums[0] + nums[1] == 9, we return [0,1].
+
+
+
+//solution 1
+// vector<int> printResult(const vector<int>nums, int target){
+//     vector<int> indices = {0,0};
+//     for (int i = 0; i < nums.size() - 1; i++){
+//         for(int j = i + 1; j < nums.size(); ++j){
+//             if(target - nums[i] == nums[j]){
+//                 indices[0] = i;
+//                 indices[1] = j;
+//                 return indices;
+//             }
+//         }
+//         cout << endl;
+//     }
+//     return {};
+//}
+
+
+
+
+
+//solution 2
+vector<int> printResult(const vector<int> nums, int target){
+    unordered_map<int, int> seen;
+
+    for(int i = 0; i < nums.size(); i++){
+        int diff = target - nums[i];
+
+        if(seen.count(diff)){
+            return {seen[diff], i};
+        }
+
+        seen[nums[i]] = i;
+    }
+
+
+    return {};
+}
+
+
+
+
+int main(){
+    vector<int> nums = {2,7,11,15};
+    int target = 9;
+   
+    
+    vector<int> result = printResult(nums, target);
+
+    if (!result.empty()) {
+        cout << "[" << result[0] << ", " << result[1] << "]" << endl;
+    } else {
+        cout << "No result found" << endl;
+    }
+
+    return 0;
+}
