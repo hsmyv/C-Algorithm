@@ -3119,38 +3119,126 @@ int main()
 
 
 //solution 2
-vector<int> printResult(const vector<int> nums, int target){
-    unordered_map<int, int> seen;
+// vector<int> printResult(const vector<int> nums, int target){
+//     unordered_map<int, int> seen;
 
-    for(int i = 0; i < nums.size(); i++){
-        int diff = target - nums[i];
+//     for(int i = 0; i < nums.size(); i++){
+//         int diff = target - nums[i];
 
-        if(seen.count(diff)){
-            return {seen[diff], i};
-        }
+//         if(seen.count(diff)){
+//             return {seen[diff], i};
+//         }
 
-        seen[nums[i]] = i;
+//         seen[nums[i]] = i;
+//     }
+
+
+//     return {};
+// }
+
+
+
+
+// int main(){
+//     vector<int> nums = {2,7,11,15};
+//     int target = 9;
+   
+    
+//     vector<int> result = printResult(nums, target);
+
+//     if (!result.empty()) {
+//         cout << "[" << result[0] << ", " << result[1] << "]" << endl;
+//     } else {
+//         cout << "No result found" << endl;
+//     }
+
+//     return 0;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 119. Count Strings of Given Length in String Array
+
+// Write a C++ program to count the number of strings with a given length in a given array of strings.
+// Test Data:
+// ({"a", "b", "bb", "c", "ccc" }, 1) ->3
+// ({"a", "b", "bb", "c", "ccc" }, 2) ->1
+// ({"a", "b", "bb", "c", "ccc" }, 3) ->1
+
+
+// string arrayString[] = {"a", "b", "bb", "c", "ccc" };
+
+
+
+// int countNumberOfString(string stringArray[], int size, int length){
+//     int total = 0;
+
+//     for (int i = 0; i < size; i++){
+        
+//             if(length == stringArray[i].size()){
+//                 total++;
+//             }
+
+        
+//     }
+//     return total;
+// }
+
+
+
+// int main(){
+//     int size = sizeof(arrayString) / sizeof(arrayString[0]);
+//     cout << countNumberOfString(arrayString, size, 3) << endl;
+// }
+
+
+
+
+
+
+
+
+
+
+// 120. Create Array of First n Strings from Array
+
+// Write a C++ program to create an array using the first n strings from a given array of strings. (n>=1 and <=length of the array).
+
+// Test Data:
+// ({"a", "b", "bb", "c", "ccc" }, 2) -> {"a", "b"}
+// ({"a", "b", "bb", "c", "ccc" }, 3) -> {"a", "b", "bb"}
+
+
+string findFirstNStrings(const vector<string>& stringArray, int length){
+    
+    for (int i = 0; i < length; i++){
+            cout << stringArray[i] << endl;
+        
     }
-
-
-    return {};
+    
 }
 
 
 
-
 int main(){
-    vector<int> nums = {2,7,11,15};
-    int target = 9;
-   
-    
-    vector<int> result = printResult(nums, target);
+    vector<string> arrayString = {"a", "b", "bb", "c", "ccc" };
 
-    if (!result.empty()) {
-        cout << "[" << result[0] << ", " << result[1] << "]" << endl;
-    } else {
-        cout << "No result found" << endl;
-    }
-
-    return 0;
+    cout << findFirstNStrings(arrayString, 3) << endl;
 }
